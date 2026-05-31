@@ -2,137 +2,48 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodDrinkApp.HardwarePage"
-             Title="Hardware Demo">
+             Title="Hardware Demo"
+             BackgroundColor="{AppThemeBinding Light=#F5F7FA, Dark=#121212}">
     <ScrollView>
-        <ScrollView.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="{AppThemeBinding Light=#FFF1DA, Dark=#130F0C}" Offset="0.0" />
-                <GradientStop Color="{AppThemeBinding Light=#FFF9EF, Dark=#0F1711}" Offset="1.0" />
-            </LinearGradientBrush>
-        </ScrollView.Background>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Label Text="📱 Device Features" FontSize="24" FontAttributes="Bold" TextColor="#1E7F7C" />
 
-        <VerticalStackLayout Padding="22" Spacing="16">
-            <Border StrokeThickness="0" Padding="18" BackgroundColor="{AppThemeBinding Light=#FFFDF8, Dark=#1A1712}">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="8" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="6">
-                    <Label Text="Mobile hardware"
-                           FontSize="28"
-                           FontAttributes="Bold"
-                           TextColor="{AppThemeBinding Light=#3A2518, Dark=#FFF2DF}"
-                           SemanticProperties.HeadingLevel="Level1" />
-                    <Label Text="Demonstrate camera, location, speech, vibration, and haptic feedback."
-                           FontSize="15"
-                           TextColor="{AppThemeBinding Light=#8B6D55, Dark=#D8C4AC}" />
-                </VerticalStackLayout>
-            </Border>
-
-            <Border StrokeThickness="1"
-                    Stroke="{AppThemeBinding Light=#F0D6B8, Dark=#3E3023}"
-                    BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
-                    Padding="16">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="8" />
-                </Border.StrokeShape>
-                <VerticalStackLayout Spacing="14">
-                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                        <VerticalStackLayout Spacing="3">
-                            <Label Text="Food photo" FontSize="17" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#D9472B, Dark=#FF9C7B}" />
-                            <Label Text="Capture the colour and condition of the meal." FontSize="13" TextColor="{AppThemeBinding Light=#8B6D55, Dark=#D8C4AC}" />
-                        </VerticalStackLayout>
-                        <Button Grid.Column="1"
-                                Text="Photo"
-                                BackgroundColor="#D9472B"
-                                TextColor="#FFFFFF"
-                                Clicked="OnTakePhotoClicked"
-                                SemanticProperties.Hint="Open the camera to capture a food image" />
+            <!-- 相机卡片 -->
+            <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}" Padding="16">
+                <VerticalStackLayout Spacing="12">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Camera" FontSize="16" FontAttributes="Bold" TextColor="#E67E22" />
+                        <Button Grid.Column="1" Text="Take photo" BackgroundColor="#1E7F7C" TextColor="White" CornerRadius="8" Clicked="OnTakePhotoClicked" />
                     </Grid>
-                    <Border StrokeThickness="0"
-                            BackgroundColor="{AppThemeBinding Light=#FFF0C9, Dark=#312316}"
-                            HeightRequest="220">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="8" />
-                        </Border.StrokeShape>
-                        <Image x:Name="FoodPhoto"
-                               Aspect="AspectFill"
-                               SemanticProperties.Description="Captured food photo preview" />
+                    <Border BackgroundColor="#F3F4F6" HeightRequest="200" StrokeThickness="0">
+                        <Image x:Name="FoodPhoto" Aspect="AspectFill" />
                     </Border>
                 </VerticalStackLayout>
             </Border>
 
-            <Border StrokeThickness="1"
-                    Stroke="{AppThemeBinding Light=#F0D6B8, Dark=#3E3023}"
-                    BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
-                    Padding="16">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="8" />
-                </Border.StrokeShape>
-                <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
-                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                        <VerticalStackLayout Spacing="3">
-                            <Label Text="Meal location" FontSize="17" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#2F7A4F, Dark=#8CE6A1}" />
-                            <Label Text="Show country, city, region, and coordinates." FontSize="13" TextColor="{AppThemeBinding Light=#8B6D55, Dark=#D8C4AC}" />
-                        </VerticalStackLayout>
-                        <Button Grid.Column="1"
-                                Text="Locate"
-                                BackgroundColor="#2F7A4F"
-                                TextColor="#FFFFFF"
-                                Clicked="OnGetLocationClicked"
-                                SemanticProperties.Hint="Use location to record the meal place" />
+            <!-- 位置卡片 -->
+            <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}" Padding="16">
+                <VerticalStackLayout Spacing="12">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Location" FontSize="16" FontAttributes="Bold" TextColor="#E67E22" />
+                        <Button Grid.Column="1" Text="Get location" BackgroundColor="#1E7F7C" TextColor="White" CornerRadius="8" Clicked="OnGetLocationClicked" />
                     </Grid>
-                    <Label x:Name="LocationLabel"
-                           Grid.Row="1"
-                           Text="Location has not been captured yet."
-                           FontSize="15"
-                           TextColor="{AppThemeBinding Light=#6E5A47, Dark=#D8C4AC}" />
-                    <Label x:Name="CoordinateLabel"
-                           Grid.Row="2"
-                           Text="Coordinates will appear here."
-                           FontSize="13"
-                           TextColor="{AppThemeBinding Light=#9A7B63, Dark=#BFA58E}" />
-                </Grid>
+                    <Label x:Name="LocationLabel" FontSize="14" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+                    <Label x:Name="CoordinateLabel" FontSize="12" TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
+                </VerticalStackLayout>
             </Border>
 
             <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
-                <Button Text="Read help"
-                        BackgroundColor="#F29B38"
-                        TextColor="#3A2518"
-                        Clicked="OnReadHelpClicked"
-                        SemanticProperties.Hint="Read the help text aloud" />
-                <Button Grid.Column="1"
-                        Text="Stop speech"
-                        BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
-                        BorderColor="{AppThemeBinding Light=#F0D6B8, Dark=#3E3023}"
-                        BorderWidth="1"
-                        TextColor="{AppThemeBinding Light=#D9472B, Dark=#FFB15D}"
-                        Clicked="OnStopSpeechClicked"
-                        SemanticProperties.Hint="Stop current speech" />
+                <Button Text="Read help" BackgroundColor="#1E7F7C" TextColor="White" CornerRadius="8" Clicked="OnReadHelpClicked" />
+                <Button Text="Stop speech" BackgroundColor="{AppThemeBinding Light=#F3F4F6, Dark=#2D2D2D}" TextColor="#1E7F7C" CornerRadius="8" Clicked="OnStopSpeechClicked" />
             </Grid>
 
-            <Button Text="Haptic feedback"
-                    BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
-                    BorderColor="{AppThemeBinding Light=#F0D6B8, Dark=#3E3023}"
-                    BorderWidth="1"
-                    TextColor="{AppThemeBinding Light=#D9472B, Dark=#FFB15D}"
-                    Clicked="OnFeedbackClicked"
-                    SemanticProperties.Hint="Trigger vibration and haptic feedback" />
+            <Button Text="Haptic feedback" BackgroundColor="#E67E22" TextColor="White" CornerRadius="8" Clicked="OnFeedbackClicked" />
 
-            <Border StrokeThickness="0"
-                    BackgroundColor="{AppThemeBinding Light=#FFF0C9, Dark=#312316}"
-                    Padding="14">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="8" />
-                </Border.StrokeShape>
+            <Border BackgroundColor="#FEE2E2" Padding="12">
                 <VerticalStackLayout Spacing="6">
-                    <Label x:Name="HardwareStatusLabel"
-                           Text="Ready."
-                           FontAttributes="Bold"
-                           TextColor="{AppThemeBinding Light=#A95517, Dark=#FFD18E}" />
-                    <Label x:Name="FeedbackCountLabel"
-                           Text="Haptic feedback tests: 0"
-                           FontSize="13"
-                           TextColor="{AppThemeBinding Light=#6E5A47, Dark=#D8C4AC}" />
+                    <Label x:Name="HardwareStatusLabel" Text="Ready." FontAttributes="Bold" TextColor="#B91C1C" />
+                    <Label x:Name="FeedbackCountLabel" Text="Haptic tests: 0" FontSize="13" TextColor="#6B7280" />
                 </VerticalStackLayout>
             </Border>
         </VerticalStackLayout>
