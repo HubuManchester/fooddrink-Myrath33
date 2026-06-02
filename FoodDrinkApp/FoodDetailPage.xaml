@@ -6,7 +6,6 @@
              BackgroundColor="{AppThemeBinding Light=#F5F7FA, Dark=#121212}">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="16">
-            <!-- 主卡片 -->
             <Border BackgroundColor="#1E7F7C" StrokeThickness="0" Padding="20">
                 <VerticalStackLayout Spacing="8">
                     <Label x:Name="NameLabel" FontSize="26" FontAttributes="Bold" TextColor="White" />
@@ -15,7 +14,6 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- 营养详情卡片 -->
             <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}" StrokeThickness="0" Padding="16">
                 <VerticalStackLayout Spacing="12">
                     <Label Text="📊 Nutrition overview" FontSize="16" FontAttributes="Bold" TextColor="#E67E22" />

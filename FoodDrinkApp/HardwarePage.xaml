@@ -8,7 +8,6 @@
         <VerticalStackLayout Padding="20" Spacing="16">
             <Label Text="📱 Device Features" FontSize="24" FontAttributes="Bold" TextColor="#1E7F7C" />
 
-            <!-- 相机卡片 -->
             <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}" Padding="16">
                 <VerticalStackLayout Spacing="12">
                     <Grid ColumnDefinitions="*,Auto">
@@ -21,7 +20,6 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- 位置卡片 -->
             <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}" Padding="16">
                 <VerticalStackLayout Spacing="12">
                     <Grid ColumnDefinitions="*,Auto">

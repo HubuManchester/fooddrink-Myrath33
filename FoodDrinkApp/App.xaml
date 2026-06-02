@@ -4,26 +4,21 @@
              x:Class="FoodDrinkApp.App">
     <Application.Resources>
         <ResourceDictionary>
-            <!-- 全局纯色背景 -->
             <Color x:Key="AppBackgroundLight">#F5F7FA</Color>
             <Color x:Key="AppBackgroundDark">#121212</Color>
 
-            <!-- 卡片背景 -->
             <Color x:Key="CardBackgroundLight">#FFFFFF</Color>
             <Color x:Key="CardBackgroundDark">#1E1E1E</Color>
 
-            <!-- 主色调：蓝绿（Teal） -->
             <Color x:Key="PrimaryColor">#1E7F7C</Color>
             <Color x:Key="PrimaryDark">#0E5E5C</Color>
             <Color x:Key="SecondaryColor">#E67E22</Color>
 
-            <!-- 文本颜色 -->
             <Color x:Key="TextPrimaryLight">#1F2937</Color>
             <Color x:Key="TextPrimaryDark">#F9FAFB</Color>
             <Color x:Key="TextSecondaryLight">#6B7280</Color>
             <Color x:Key="TextSecondaryDark">#9CA3AF</Color>
 
-            <!-- 控件样式 -->
             <Style TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource CardBackgroundLight}, Dark={StaticResource CardBackgroundDark}}" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextPrimaryLight}, Dark={StaticResource TextPrimaryDark}}" />

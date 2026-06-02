@@ -6,7 +6,6 @@
              Title="NutriBite"
              BackgroundColor="{AppThemeBinding Light=#F5F7FA, Dark=#121212}">
     <Grid RowDefinitions="Auto,*">
-        <!-- 简化头部 -->
         <Border Padding="16,12" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}">
             <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
                 <SearchBar x:Name="SearchFoodBar"
@@ -41,7 +40,6 @@
                                 <Shadow Brush="#20000000" Offset="0,2" Radius="6" Opacity="0.1" />
                             </Border.Shadow>
                             <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12" Padding="16">
-                                <!-- 左侧装饰条 -->
                                 <BoxView BackgroundColor="#1E7F7C" WidthRequest="4" HeightRequest="40" VerticalOptions="Center" />
                                 <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="6">
                                     <Label Text="{Binding Name}"

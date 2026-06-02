@@ -6,13 +6,11 @@
              BackgroundColor="{AppThemeBinding Light=#F5F7FA, Dark=#121212}">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="16">
-            <!-- 页面标题 -->
             <Label Text="✍️ Log your meal"
                    FontSize="24"
                    FontAttributes="Bold"
                    TextColor="{AppThemeBinding Light=#1E7F7C, Dark=#4DD0CE}" />
 
-            <!-- 基础信息卡片 -->
             <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}"
                     StrokeThickness="0"
                     Padding="16">
@@ -38,7 +36,6 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- 营养数据卡片 -->
             <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#1E1E1E}"
                     StrokeThickness="0"
                     Padding="16">
@@ -59,7 +56,6 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- 验证提示面板 -->
             <Border x:Name="ValidationPanel"
                     IsVisible="False"
                     BackgroundColor="#FEE2E2"
